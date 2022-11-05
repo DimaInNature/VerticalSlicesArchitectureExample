@@ -1,7 +1,7 @@
 ﻿namespace Application.Features.Clients.Queries;
 
 public class GetAllClientsListQueryHandler
-    : IRequestHandler<GetAllClientListQuery, IEnumerable<ClientEntity>>
+    : IRequestHandler<GetAllClientsListQuery, IEnumerable<ClientEntity>>
 {
     private readonly ApplicationContext _context;
 
@@ -10,7 +10,7 @@ public class GetAllClientsListQueryHandler
         _context = context;
 
     public async Task<IEnumerable<ClientEntity>> Handle(
-        GetAllClientListQuery request,
+        GetAllClientsListQuery request,
         CancellationToken cancellationToken)
     {
         if (request.Predicate is null)

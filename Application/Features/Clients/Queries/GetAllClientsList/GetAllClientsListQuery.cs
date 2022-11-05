@@ -1,13 +1,13 @@
 ﻿namespace Application.Features.Clients.Queries;
 
-public sealed record GetAllClientListQuery
+public sealed record GetAllClientsListQuery
     : IRequest<IEnumerable<ClientEntity>>
 {
     public Func<ClientEntity, bool>? Predicate { get; }
 
-    public GetAllClientListQuery(
+    public GetAllClientsListQuery(
         Func<ClientEntity, bool> predicate) =>
         Predicate = predicate;
 
-    public GetAllClientListQuery() { }
+    public GetAllClientsListQuery() { }
 }
