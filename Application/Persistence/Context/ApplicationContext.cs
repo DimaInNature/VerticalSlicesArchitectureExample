@@ -8,13 +8,9 @@ public class ApplicationContext : DbContext
 
     public DbSet<SaleContractEntity> SaleContract => Set<SaleContractEntity>();
 
-    public ApplicationContext(DbContextOptions options) : base(options) 
-    {
+    public ApplicationContext(DbContextOptions options) : base(options) =>
         Database.EnsureCreated();
-    }
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
+    
+    protected override void OnModelCreating(ModelBuilder modelBuilder) =>
         base.OnModelCreating(modelBuilder);
-    }
 }
